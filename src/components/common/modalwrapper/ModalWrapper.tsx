@@ -17,7 +17,7 @@ const ModalWrapper = ({ children, showModal, setShowModal }) => {
           }}
           className="modalPop"
         >
-          <div className="header">
+          <div className="modal-header">
             <span onClick={() => setShowModal(false)}>
               <IoIosCloseCircleOutline />
             </span>

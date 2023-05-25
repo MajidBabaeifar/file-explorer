@@ -7,6 +7,8 @@ import { fileAction } from "./file.actions";
 const initialState: Files = {
   directory,
   selectedDir: null,
+  selectedFiles: [],
+  deletedFiles: [],
 };
 export const files = createSlice({
   name: "files",
@@ -17,6 +19,28 @@ export const files = createSlice({
       switch (type) {
         case fileAction.selectDir:
           state.selectedDir = data;
+          break;
+        case fileAction.toggleSelectFiles:
+          if (state.selectedFiles.includes(data)) {
+            state.selectedFiles = state.selectedFiles.filter(
+              (id) => id !== data
+            );
+          } else {
+            state.selectedFiles = [...state.selectedFiles, data];
+          }
+          break;
+        case fileAction.selectFiles:
+          if (state.selectedFiles.includes(data)) {
+            return;
+          } else {
+            state.selectedFiles = [...state.selectedFiles, data].filter(
+              (id) => !state.deletedFiles.includes(id)
+            );
+          }
+          break;
+        case fileAction.deleteSelectedFiles:
+          state.deletedFiles = [...state.deletedFiles, ...state.selectedFiles];
+          state.selectedFiles = [];
           break;
         default:
           break;

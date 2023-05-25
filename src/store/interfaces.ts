@@ -8,4 +8,6 @@ export interface Ui {
 export interface Files {
   directory: any;
   selectedDir: any;
+  selectedFiles: any[];
+  deletedFiles: any[];
 }
