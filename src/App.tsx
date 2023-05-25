@@ -1,7 +1,10 @@
 import React from "react";
+import ExplorerWindow from "./pages/ExplorerWindow";
 
 function App() {
-  return <div>this is the start </div>;
+  return <div>
+    <ExplorerWindow />
+  </div>;
 }
 
 export default App;
