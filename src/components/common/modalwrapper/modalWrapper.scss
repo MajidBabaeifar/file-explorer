@@ -1,0 +1,25 @@
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: #0000003e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modalPop {
+    border-radius: 16px;
+    padding: 16px;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    .header {
+      font-size: 28px;
+      text-align: right;
+      height: 48px;
+      width: 100%;
+    }
+  }
+}

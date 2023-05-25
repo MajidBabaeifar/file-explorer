@@ -1,0 +1,16 @@
+.file {
+  padding: 3px;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    border-radius: 8px;
+    background: rgba(0, 0, 251, 0.063);
+    color: rgb(87, 87, 255);
+    outline: 2px solid rgb(87, 87, 255);
+  }
+}

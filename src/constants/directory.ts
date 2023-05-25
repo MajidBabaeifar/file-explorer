@@ -10,13 +10,13 @@ export const directory = [
           {
             id: "3",
             title: "test",
-            type: "image",
+            type: "img",
             url: "https://picsum.photos/200/300",
           },
           {
             id: "4",
             title: "test",
-            type: "image",
+            type: "img",
             url: "https://picsum.photos/200/300",
           },
         ],
@@ -28,13 +28,13 @@ export const directory = [
           {
             id: "6",
             title: "test",
-            type: "image",
+            type: "img",
             url: "https://picsum.photos/200/300",
           },
           {
             id: "7",
             title: "test",
-            type: "image",
+            type: "img",
             url: "https://picsum.photos/200/300",
           },
         ],

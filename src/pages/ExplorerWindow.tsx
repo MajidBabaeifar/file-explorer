@@ -5,10 +5,10 @@ import DirectoryView from "../components/directoryView/DirectoryView";
 const ExplorerWindow = () => {
   return (
     <div className="row">
-      <div className="col-2">
+      <div className="col-3">
         <SideAccordion />
       </div>
-      <div className="col-10">
+      <div className="col-9">
         <DirectoryView />
       </div>
     </div>

@@ -2,6 +2,9 @@ import Collapse from "@kunukn/react-collapse";
 import React, { useState } from "react";
 import "./recursiveAccordion.scss";
 import { BsFolder } from "react-icons/bs";
+import { manipulateDirectory } from "../../store/feature/files/files";
+import { useDispatch } from "react-redux";
+import { fileAction } from "../../store/feature/files/file.actions";
 
 interface Props {
   directory: any;
@@ -9,6 +12,12 @@ interface Props {
 
 const RecursiveAccordion = ({ directory }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const setSelectedDir = () => {
+    dispatch(
+      manipulateDirectory({ type: fileAction.selectDir, data: directory })
+    );
+  };
   return (
     <div className="accordion">
       {directory?.subFolders ? (
@@ -26,7 +35,14 @@ const RecursiveAccordion = ({ directory }: Props) => {
           </Collapse>
         </div>
       ) : (
-        <div>{directory?.title}</div>
+        <>
+          <div onClick={setSelectedDir} className="d-flex">
+            <div className="me-2">
+              <BsFolder />
+            </div>
+            <div>{directory?.title}</div>
+          </div>
+        </>
       )}
     </div>
   );

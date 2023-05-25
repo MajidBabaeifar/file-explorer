@@ -5,4 +5,7 @@ export interface Ui {
     icon: any;
   }[];
 }
-export interface Files {}
+export interface Files {
+  directory: any;
+  selectedDir: any;
+}
